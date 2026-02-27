@@ -22,7 +22,7 @@ build:
 	  echo "Generate parser in $$(pwd)/$$dir"; \
 	  if ! [ -e "$$dir/src/parser.c" ] \
 	     || [ "$$dir/grammar.js" -nt "$$dir/src/parser.c" ]; then \
-	    (cd "$$dir" && tree-sitter generate --no-bindings); \
+	    (cd "$$dir" && tree-sitter generate); \
 	  else \
 	    echo "$$dir/src/parser.c is up to date."; \
 	  fi; \
