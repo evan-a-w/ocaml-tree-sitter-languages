@@ -1,0 +1,3 @@
+semgrep-grammars/src/tree-sitter-el2/LICENSE
+semgrep-grammars/src/tree-sitter-el2/grammar.js
+semgrep-grammars/src/semgrep-el2/grammar.js
