@@ -46,6 +46,8 @@
 [submodule "core"]
 	path = core
 	url = git@github.com:evan-a-w/ocaml-tree-sitter-core.git
+	branch = main
 [submodule "lang/semgrep-grammars/src/tree-sitter-el2"]
 	path = lang/semgrep-grammars/src/tree-sitter-el2
 	url = https://github.com/evan-a-w/tree-sitter-el2.git
+	branch = main
