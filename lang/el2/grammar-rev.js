@@ -13,6 +13,7 @@ module.exports = grammar({
     [$.type_application, $.array_type],
     [$.module_path, $.type_path],
     [$.module_path, $.module_value_path],
+    [$.constructor_expression, $.module_value_path],
     [$.if_expression, $.binary_expression],
     [$.match_expression, $.binary_expression]
   ],
@@ -1048,10 +1049,19 @@ module.exports = grammar({
         )
       )
     ),
-    module_value_path: $ => seq(
-      $.module_path,
-      ".",
-      $.identifier
+    module_value_path: $ => prec(
+      "member",
+      seq(
+        $.uidentifier,
+        repeat(
+          seq(
+            ".",
+            $.uidentifier
+          )
+        ),
+        ".",
+        $.identifier
+      )
     ),
     literal: $ => choice(
       $.float,
