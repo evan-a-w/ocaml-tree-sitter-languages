@@ -1048,10 +1048,23 @@ module.exports = grammar({
         )
       )
     ),
-    module_value_path: $ => seq(
-      $.module_path,
-      ".",
-      $.identifier
+    module_value_path: $ => choice(
+      seq(
+        $.uidentifier,
+        ".",
+        $.identifier
+      ),
+      seq(
+        $.uidentifier,
+        repeat1(
+          seq(
+            ".",
+            $.uidentifier
+          )
+        ),
+        ".",
+        $.identifier
+      )
     ),
     literal: $ => choice(
       $.float,
